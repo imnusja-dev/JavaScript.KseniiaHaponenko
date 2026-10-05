@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Школа</title>
+  
+ <link rel="stylesheet" href="style.css">
+  
+</head>
+<body style="background-color: #66CDAA;">
+
+<h1>Школа</h1>
+
+ <!-- Ось тут я задаю 3 кнопки. -->
+<button onclick="showTable('students')">Учні</button>
+<button onclick="showTable('teachers')">Вчителі</button>
+<button onclick="showTable('subjects')">Предмети</button>
+
+<br><br>
+
+<!-- Таблиця учнів: данні, що ми побачимо в таблиці -->
+<div id="students">
+    <h2>Учні</h2>
+    <table border="1">
+        <tr>
+            <th>ПІБ</th>
+            <th>Клас</th>
+            <th>Дата народження</th>
+            <th>Телефон</th>
+            <th>Адреса</th>
+            <th>Середній бал</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Іваненко Іван</td>
+            <td>10-А</td>
+            <td>15.03.2010</td>
+            <td>099-111-22-33</td>
+            <td>Дніпро</td>
+            <td>10.2</td>
+            <td>ivan@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Петренко Анна</td>
+            <td>10-А</td>
+            <td>21.07.2010</td>
+            <td>097-222-33-44</td>
+            <td>Дніпро</td>
+            <td>11.1</td>
+            <td>anna@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Сидоренко Олег</td>
+            <td>10-Б</td>
+            <td>05.11.2009</td>
+            <td>050-333-44-55</td>
+            <td>Київ</td>
+            <td>9.5</td>
+            <td>oleg@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Коваль Марія</td>
+            <td>10-Б</td>
+            <td>12.01.2010</td>
+            <td>063-444-55-66</td>
+            <td>Львів</td>
+            <td>11.8</td>
+            <td>maria@gmail.com</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Таблиця вчителів: данні, що ми побачимо в таблиці -->
+<div id="teachers" style="display: none;">
+    <h2>Вчителі</h2>
+    <table border="1">
+        <tr>
+            <th>ПІБ</th>
+            <th>Предмет</th>
+            <th>Стаж</th>
+            <th>Категорія</th>
+            <th>Ставка</th>
+            <th>Телефон</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Коваленко Олена</td>
+            <td>Математика</td>
+            <td>15 років</td>
+            <td>Вища</td>
+            <td>1.0</td>
+            <td>099-333-44-55</td>
+            <td>kovalenko@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Шевченко Петро</td>
+            <td>Інформатика</td>
+            <td>8 років</td>
+            <td>Перша</td>
+            <td>1.0</td>
+            <td>097-444-55-66</td>
+            <td>shevchenko@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Бондаренко Ірина</td>
+            <td>Фізика</td>
+            <td>12 років</td>
+            <td>Вища</td>
+            <td>0.75</td>
+            <td>050-555-66-77</td>
+            <td>bondarenko@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Ткаченко Сергій</td>
+            <td>Історія</td>
+            <td>5 років</td>
+            <td>Друга</td>
+            <td>1.0</td>
+            <td>063-666-77-88</td>
+            <td>tkachenko@gmail.com</td>
+        </tr>
+    </table>
+</div>
+
+<!-- Таблиця предметів: данні, що ми побачимо в таблиці -->
+<div id="subjects" style="display: none;">
+    <h2>Предмети</h2>
+    <table border="1">
+        <tr>
+            <th>Назва</th>
+            <th>Кількість годин</th>
+            <th>Вчитель</th>
+            <th>Клас</th>
+            <th>Тип</th>
+            <th>Кабінет</th>
+            <th>Семестр</th>
+        </tr>
+        <tr>
+            <td>Математика</td>
+            <td>4</td>
+            <td>Коваленко Олена</td>
+            <td>10-А</td>
+            <td>Основний</td>
+            <td>205</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Інформатика</td>
+            <td>2</td>
+            <td>Шевченко Петро</td>
+            <td>10-А</td>
+            <td>Основний</td>
+            <td>301</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Фізика</td>
+            <td>3</td>
+            <td>Бондаренко Ірина</td>
+            <td>10-Б</td>
+            <td>Основний</td>
+            <td>104</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Історія</td>
+            <td>2</td>
+            <td>Ткаченко Сергій</td>
+            <td>10-Б</td>
+            <td>Основний</td>
+            <td>210</td>
+            <td>1</td>
+        </tr>
+    </table>
+</div>
+<br>
+  <br>
+
+  
+  <p>Виконала: Гапоненко Ксенія
+    <br>
+  Курс Prof2IT: «JavaScript: від основ до практичного застосування»</p>
+
+
+  <script src="script.js"></script>
+
+
+</body>
+</html>
