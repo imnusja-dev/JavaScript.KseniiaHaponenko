@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Школа</title>
+  
+ <link rel="stylesheet" href="style.css">
+  
+</head>
+<body style="background-color: #66CDAA;">
+
+<h1>Школа</h1>
+
+ <!-- Ось тут я задаю 3 кнопки. -->
+<button onclick="showTable('students')">Учні</button>
+<button onclick="showTable('teachers')">Вчителі</button>
+<button onclick="showTable('subjects')">Предмети</button>
+
+<br><br>
+
+<!-- ТАБЛИЦЯ 1 -->
+<div id="students">
+    <h2>Учні</h2>
+
+<table border="1">
+    <thead> <!-- Заголовок таблиці залишаю у HTML-->
+        <tr>
+            <th>ПІБ</th>
+            <th>Клас</th>
+            <th>Дата народження</th>
+            <th>Телефон</th>
+            <th>Адреса</th>
+            <th>Середній бал</th>
+            <th>Email</th>
+        </tr>
+    </thead> <!--А ось дані самої таблиці будемо витягувати з JS-->
+    <tbody id="students-list">
+        <!-- JS сам підтягне сюди дані -->
+    </tbody>
+</table>
+</div>
+
+<!-- ТАБЛИЦЯ 2 -->
+<div id="teachers" style="display: none;">
+    <h2>Вчителі</h2>
+
+  <table border="1">
+    <thead>
+        <tr>
+            <th>ПІБ</th>
+            <th>Предмет</th>
+            <th>Стаж</th>
+            <th>Категорія</th>
+            <th>Ставка</th>
+            <th>Телефон</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody id="teachers-list">
+        <!-- Масив вчителів з JS рендериться сюди -->
+    </tbody>
+</table>
+</div>
+
+<!-- ТАБЛИЦЯ 3 -->
+<div id="subjects" style="display: none;">
+    <h2>Предмети</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Назва</th>
+            <th>Кількість годин</th>
+            <th>Вчитель</th>
+            <th>Клас</th>
+            <th>Тип</th>
+            <th>Кабінет</th>
+            <th>Семестр</th>
+        </tr>
+    </thead>
+    <tbody id="subjects-list">
+        <!-- Масив предметів з JS рендериться сюди -->
+    </tbody>
+</table>
+</div>
+<br>
+  <br>
+
+  
+  <p>Виконала: Гапоненко Ксенія
+    <br>
+  Курс Prof2IT: «JavaScript: від основ до практичного застосування»</p> 
+  Оновленно. Дані таблиці рендеряться з JS. 
+
+  <script src="script.js"></script>
+
+
+</body>
+</html>
