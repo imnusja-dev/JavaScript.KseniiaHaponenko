@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Школа</title>
+  
+ <link rel="stylesheet" href="style.css">
+
+  <script defer src="script.js"></script>
+  <!-- Тут додали defer. -->
+  
+</head>
+<body style="background-color: #66CDAA;">
+
+  <h1>Лабораторна робота №4</h1>
+<h1>Школа</h1>
+
+ <!-- Ось тут я задаю 3 кнопки. -->
+<button onclick="showTable('students')">Учні</button>
+<button onclick="showTable('teachers')">Вчителі</button>
+<button onclick="showTable('subjects')">Предмети</button>
+
+<br><br>
+
+<!-- ТАБЛИЦЯ 1 -->
+<div id="students">
+    <h2>Учні</h2>
+
+<table border="1">
+    <thead> 
+        <tr>
+            <th>ПІБ</th>
+            <th>Клас</th>
+            <th>Дата народження</th>
+            <th>Телефон</th>
+            <th>Адреса</th>
+            <th>Середній бал</th>
+            <th>Email</th>
+          <th>Дії</th>
+        </tr>
+    </thead> 
+    <tbody id="students-list">
+        <!-- JS сам підтягне сюди дані -->
+    </tbody>
+</table>
+
+  <!-- Це, щоб вводити дані -->
+<h3>Додати учня</h3>
+    <form onsubmit="addStudent(event)">
+        <input type="text" id="st-fullName" placeholder="ПІБ" required>
+        <input type="text" id="st-grade" placeholder="Клас" required>
+        <input type="text" id="st-birthDate" placeholder="Дата (напр. 15.03.2010)" required>
+        <input type="text" id="st-phone" placeholder="Телефон" required>
+        <input type="text" id="st-address" placeholder="Адреса" required>
+        <input type="number" step="0.1" id="st-gpa" placeholder="Середній бал" required>
+        <input type="email" id="st-email" placeholder="Email" required>
+        <button type="submit">Додати</button>
+    </form>
+
+
+  
+</div>
+
+<!-- ТАБЛИЦЯ 2 -->
+<div id="teachers" style="display: none;">
+    <h2>Вчителі</h2>
+
+  <table border="1">
+    <thead>
+        <tr>
+            <th>ПІБ</th>
+            <th>Предмет</th>
+            <th>Стаж</th>
+            <th>Категорія</th>
+            <th>Ставка</th>
+            <th>Телефон</th>
+            <th>Email</th>
+          <th>Дії</th>
+        </tr>
+    </thead>
+    <tbody id="teachers-list">
+        <!-- Масив вчителів з JS рендериться сюди -->
+    </tbody>
+</table>
+
+<h3>Додати вчителя</h3>
+    <form onsubmit="addTeacher(event)">
+        <input type="text" id="tc-fullName" placeholder="ПІБ" required>
+        <input type="text" id="tc-subject" placeholder="Предмет" required>
+        <input type="text" id="tc-experience" placeholder="Стаж" required>
+        <input type="text" id="tc-category" placeholder="Категорія" required>
+        <input type="number" step="0.01" id="tc-rate" placeholder="Ставка" required>
+        <input type="text" id="tc-phone" placeholder="Телефон" required>
+        <input type="email" id="tc-email" placeholder="Email" required>
+        <button type="submit">Додати</button>
+    </form>
+
+
+  
+</div>
+
+<!-- ТАБЛИЦЯ 3 -->
+<div id="subjects" style="display: none;">
+    <h2>Предмети</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Назва</th>
+            <th>Кількість годин</th>
+            <th>Вчитель</th>
+            <th>Клас</th>
+            <th>Тип</th>
+            <th>Кабінет</th>
+            <th>Семестр</th>
+          <th>Дії</th>
+        </tr>
+    </thead>
+    <tbody id="subjects-list">
+        <!-- Масив предметів з JS рендериться сюди -->
+    </tbody>
+</table>
+
+<h3>Додати предмет</h3>
+    <form onsubmit="addSubject(event)">
+        <input type="text" id="sb-title" placeholder="Назва предмета" required>
+        <input type="number" id="sb-hours" placeholder="Години" required>
+        
+        <!-- ВИМОГА №4: Поле вибору вчителя зі списку наявних вчителів -->
+        <select id="sb-teacher-select" required>
+            <option value="">-- Оберіть вчителя --</option>
+        </select>
+
+        <input type="text" id="sb-grade" placeholder="Клас" required>
+        <input type="text" id="sb-type" placeholder="Тип" required>
+        <input type="number" id="sb-room" placeholder="Кабінет" required>
+        <input type="number" id="sb-semester" placeholder="Семестр" required>
+        <button type="submit">Додати</button>
+    </form>
+
+
+  
+</div>
+<br>
+  <br>
+
+  
+  <p>Виконала: Гапоненко Ксенія
+    <br>
+  Курс Prof2IT: «JavaScript: від основ до практичного застосування»</p> 
+  <!-- Оновленно. Дані таблиці рендеряться з JS. -->
+
+  <!-- Це перемістили у <head>:
+  <script src="script.js"></script>  -->
+
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+У файл index.html зроблено такі зміни:
+
+1. Доданий стовпчик «Дії» у заголовки таблиць: У всі <thead> додан заголовок <th>Дії</th>, щоб у рядках відображались кнопки «Видалити».
+
+2. Додані форми введення (<form>): Під кожною з трьох таблиць створено блоки з полями <input> і кнопкою «Додати», щоб користувач міг вносити нові дані.
+
+3. Реалізовано список, що випадає (<select>): У формі додавання предмета замість звичайного текстового поля для імені вчителя встановлено список, що випадає <select id="sb-teacher-select">. Це виконує вимогу №4 із завдання — список вчителів підтягується автоматично з таблиці «Вчителі».
+-->

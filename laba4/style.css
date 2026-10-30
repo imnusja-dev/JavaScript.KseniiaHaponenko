@@ -1,0 +1,10 @@
+/*Звичайна комірка: білий*/
+td{
+background-color: #FFF;
+}
+
+/*Комірка заголовку: жовтий*/
+th{
+background-color: #F0E68C; 
+}
+
